@@ -1,0 +1,36 @@
+1° Inizializo WEB GL
+  2° actualizo word model
+  3° setteo attributos
+  4° Set buffers, uniforms, textures, program, ...
+5° DRAW => Vertex Shader
+    then
+    Rasterization
+        => Fragment Shader -> Give a color (from Rasterization)
+                           -> Frame buffers
+                           -> Screen
+
+Nota: cada MESH de la SCENE se debe crar al menos un Vertex OBJ Shader y Fragment Vertex Shader
+
+Step by step
+  Get the rendering context for WebGL
+  Initialize shaders
+  set the pos of vertices
+  set the color for clearing <canvas>
+  clear <canvas>
+  draw
+
+Buffer OBJECTS
+  1- Create a BO (gl.createBuffer())
+  2- Bind the buffer OBJ to a target (gl.bindBuffer())
+  3- Write data into the buffer OBJ (gl.bufferData())
+  4- Assign the BO to an attributte variable (gl.vertexAttribPointer())
+  5- Enable assignament (gl.enableVertexAttribArray())
+
+* gl.vertexAttribPointer(location, size, type, normalized, stride, offset)
+  Assign the buffer OBJ bound ti gl.array_buffer to the attributte variable specified by location
+  (PPT 02, pag 13)
+
+* gl.drawElements(mode, count, type, offset)
+  excecutes the shaders and draws the geometric shape in the specified MODE using the indices specified
+  in the BO bount to gl.element_array_buffer
+  (PPT 02, pag 13)
